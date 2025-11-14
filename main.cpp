@@ -24,5 +24,16 @@ int main() {
     }
     cout << endl;
 
+    for (int i = 1; !tollLane.empty(); i++) {
+        int r = rand() % 100;
+
+        if (r < 55) { // 55% probability that the head car pays and leaves
+            cout << "test 55%" << endl;
+        }
+        else { // 45% probability that another car joins the line
+            cout << "test 45%" << endl;
+        }
+    }
+
     return 0;
 }
