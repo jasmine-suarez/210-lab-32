@@ -28,10 +28,14 @@ int main() {
         int r = rand() % 100;
 
         if (r < 55) { // 55% probability that the head car pays and leaves
-            cout << "test 55%" << endl;
+            Car leaving = tollLane.front();
+            tollLane.pop_front();
+            cout << "Time: " << i << " Operation: Joined lane: ";
+            leaving.print();
         }
         else { // 45% probability that another car joins the line
-            cout << "test 45%" << endl;
+            Car joining;
+            tollLane.push_back(joining);
         }
 
         cout << "Queue:\n";
