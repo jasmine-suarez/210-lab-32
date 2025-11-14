@@ -15,7 +15,11 @@ int main() {
 
     deque<Car> tollLane;
 
-    for (int i = 0; i < INITIAL_SIZE;)
+    for (int i = 0; i < INITIAL_SIZE; i++) {
+        Car c;
+        tollLane.push_back(c);
+        c.print();
+    }
 
     cout << "Initial queue:\n";
     cout << "    ";
