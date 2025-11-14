@@ -36,7 +36,7 @@ int main() {
         else { // 45% probability that another car joins the line
             Car joining;
             tollLane.push_back(joining);
-            cout << "Time: " << i << "Operation: Joined lane: ";
+            cout << "Time: " << i << " Operation: Joined lane: ";
             joining.print();
         }
 
