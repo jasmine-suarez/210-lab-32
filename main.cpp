@@ -33,6 +33,16 @@ int main() {
         else { // 45% probability that another car joins the line
             cout << "test 45%" << endl;
         }
+
+        cout << "Queue:\n";
+        if (tollLane.empty())
+            cout << "    Empty\n";
+        else {
+            for (Car &c : tollLane) {
+                cout << "    ";
+                c.print();
+            }
+        }
     }
 
     return 0;
