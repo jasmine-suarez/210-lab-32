@@ -30,12 +30,14 @@ int main() {
         if (r < 55) { // 55% probability that the head car pays and leaves
             Car leaving = tollLane.front();
             tollLane.pop_front();
-            cout << "Time: " << i << " Operation: Joined lane: ";
+            cout << "Time: " << i << " Operation: Car paid: ";
             leaving.print();
         }
         else { // 45% probability that another car joins the line
             Car joining;
             tollLane.push_back(joining);
+            cout << "Time: " << i << "Operation: Joined lane: ";
+            joining.print();
         }
 
         cout << "Queue:\n";
@@ -47,6 +49,7 @@ int main() {
                 c.print();
             }
         }
+        cout << endl;
     }
 
     return 0;
