@@ -10,6 +10,7 @@ using namespace std;
 
 const int INITIAL_SIZE = 2; // initial size of deque when simulation starts
 
+
 int main() {
     srand(time(0));
 
