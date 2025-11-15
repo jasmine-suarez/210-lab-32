@@ -29,14 +29,10 @@ int main() {
             c.print();
         }
     }
-    cout << "removing from lane1 test:\n";
-    Car temp = tollLanes[0].front();
-    tollLanes[0].pop_front();
-    temp.print();
 
-    /*
     cout << "Initial queue:\n";
     for (int i = 0; i < INITIAL_SIZE; i++) {
+        cout << "Lane " << i + 1 << ":\n";
         Car c;
         tollLanes[i].push_back(c);
         cout << "    ";
