@@ -27,6 +27,13 @@ int main() {
         }
     }
     cout << endl;
+
+    for (int i = 1; i <= 20; i++) {   // run for 20 time periods
+        cout << "Time: " << i << endl;
+
+        
+    }
+
 /*
     for (int i = 1; !tollLane.empty(); i++) {
         int r = rand() % 100;
