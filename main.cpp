@@ -21,10 +21,18 @@ int main() {
         tollLanes[i].push_back(Car());
         tollLanes[i].push_back(Car());
     }
-    cout << "Lanes and initial queues:\n"
+    cout << "Lanes and initial queues:\n";
     for (int i = 0; i < 4; i++) {
-        
+        cout << "Lane " << i + 1 << ":\n";
+        for (Car &c : tollLanes[i]) {
+            cout << "    ";
+            c.print();
+        }
     }
+    cout << "removing from lane1 test:\n";
+    Car temp = tollLanes[0].front();
+    tollLanes[0].pop_front();
+    temp.print();
 
     /*
     cout << "Initial queue:\n";
