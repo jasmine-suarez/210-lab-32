@@ -16,27 +16,15 @@ int main() {
 
     deque<Car> tollLanes[NUM_LANES];
 
-    // TEST FOR MILESTONE 2
-    for (int i = 0; i < 4; i++) {
-        tollLanes[i].push_back(Car());
-        tollLanes[i].push_back(Car());
-    }
-    cout << "Lanes and initial queues:\n";
-    for (int i = 0; i < 4; i++) {
+    cout << "Initial queue:\n";
+    for (int i = 0; i < NUM_LANES; i++) {
         cout << "Lane " << i + 1 << ":\n";
-        for (Car &c : tollLanes[i]) {
+        for (int j = 0; j < INITIAL_SIZE; j++) {
+            Car c;
+            tollLanes[i].push_back(c);
             cout << "    ";
             c.print();
         }
-    }
-
-    cout << "Initial queue:\n";
-    for (int i = 0; i < INITIAL_SIZE; i++) {
-        cout << "Lane " << i + 1 << ":\n";
-        Car c;
-        tollLanes[i].push_back(c);
-        cout << "    ";
-        c.print();
     }
     cout << endl;
 /*
