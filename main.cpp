@@ -8,23 +8,34 @@
 #include <deque>
 using namespace std;
 
+const int NUM_LANES = 4;    // number of toll booth lanes at play
 const int INITIAL_SIZE = 2; // initial size of deque when simulation starts
-
 
 int main() {
     srand(time(0));
 
-    deque<Car> tollLane;
+    deque<Car> tollLanes[NUM_LANES];
 
+    // TEST FOR MILESTONE 2
+    for (int i = 0; i < 4; i++) {
+        tollLanes[i].push_back(Car());
+        tollLanes[i].push_back(Car());
+    }
+    cout << "Lanes and initial queues:\n"
+    for (int i = 0; i < 4; i++) {
+        
+    }
+
+    /*
     cout << "Initial queue:\n";
     for (int i = 0; i < INITIAL_SIZE; i++) {
         Car c;
-        tollLane.push_back(c);
+        tollLanes[i].push_back(c);
         cout << "    ";
         c.print();
     }
     cout << endl;
-
+/*
     for (int i = 1; !tollLane.empty(); i++) {
         int r = rand() % 100;
 
@@ -52,6 +63,7 @@ int main() {
         }
         cout << endl;
     }
+*/
 
     return 0;
 }
