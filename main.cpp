@@ -10,6 +10,9 @@ using namespace std;
 
 const int NUM_LANES = 4;    // number of toll booth lanes at play
 const int INITIAL_SIZE = 2; // initial size of deque when simulation starts
+const int PAY_PROB = 46;    // 46% probability
+const int JOIN_PROB = 39;   // 39% probability
+const int SHIFT_PROB = 15;  // 15% probability
 
 int main() {
     srand(time(0));
@@ -31,6 +34,12 @@ int main() {
     for (int i = 1; i <= 20; i++) {   // run for 20 time periods
         cout << "Time: " << i << endl;
 
+        // if lane is empty, 50/50 if a new car enters or not
+        if (tollLanes[i - 1].empty()) {
+            if (rand() % 2 == 0) {
+                
+            }
+        }
 
     }
 
