@@ -36,22 +36,34 @@ int main() {
 
         // for-loop to go through each lane
         for (int j = 0; j < NUM_LANES; j++) {
-            cout << "Lane: " << j + 1;
+            cout << "Lane: " << j + 1 << " ";
 
             // if lane is empty, 50/50 if a new car enters or not
             if (tollLanes[j].empty()) {
                 if (rand() % 2 == 0) {
                     Car newCar;
                     tollLanes[j].push_back(newCar);
-                    cout << " Joined: ";
+                    cout << "Joined: ";
                     newCar.print();
                 }
             }
 
             int r = rand() % 100; // randomizes int from 1-100
 
-            if (r < PAY_PROB) {
-                
+            if (r < PAY_PROB) { // car pays and leaves
+                Car leaving = tollLanes[j].front();
+                tollLanes[j].pop_front();
+                cout << "Paid: ";
+                leaving.print();
+            }
+            else if (r < (PAY_PROB + JOIN_PROB)) { // car joins
+                Car newCar;
+                tollLanes[j].push_back(newCar);
+                cout << "Joined: ";
+                newCar.print();
+            }
+            else { // rear car shifts lanes
+                Car shifting = tollLanes.back();
             }
 
 
