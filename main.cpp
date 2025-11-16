@@ -34,10 +34,20 @@ int main() {
     for (int i = 1; i <= 20; i++) {   // run for 20 time periods
         cout << "Time: " << i << endl;
 
-        // if lane is empty, 50/50 if a new car enters or not
-        if (tollLanes[i - 1].empty()) {
-            if (rand() % 2 == 0) {
-                
+        // for-loop to go through each lane
+        for (int j = 0; j < NUM_LANES; j++) {
+            cout << "Lane: " << j + 1 << endl;
+
+            // if lane is empty, 50/50 if a new car enters or not
+            if (tollLanes[j].empty()) {
+                if (rand() % 2 == 0) {
+                    Car newCar;
+                    tollLanes[j].push_back(newCar);
+                    cout << " Joined: ";
+                    newCar.print();
+                }
+                else
+                    cout << "no car enters";
             }
         }
 
