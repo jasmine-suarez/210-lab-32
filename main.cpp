@@ -47,57 +47,39 @@ int main() {
                     newCar.print();
                 }
             }
+            else {
+                int r = rand() % 100; // randomizes int from 1-100
 
-            int r = rand() % 100; // randomizes int from 1-100
+                if (r < PAY_PROB) { // car pays and leaves
+                    Car leaving = tollLanes[j].front();
+                    tollLanes[j].pop_front();
+                    cout << "Paid: ";
+                    leaving.print();
+                }
+                else if (r < (PAY_PROB + JOIN_PROB)) { // car joins
+                    Car newCar;
+                    tollLanes[j].push_back(newCar);
+                    cout << "Joined: ";
+                    newCar.print();
+                }
+                else { // rear car shifts lanes
+                    int randLane = j;
+                    while (randLane == j)
+                        randLane = rand() % NUM_LANES;
 
-            if (r < PAY_PROB) { // car pays and leaves
-                Car leaving = tollLanes[j].front();
-                tollLanes[j].pop_front();
-                cout << "Paid: ";
-                leaving.print();
+                    Car shifting = tollLanes[j].back();
+                    tollLanes[j].pop_back();
+                    tollLanes[randLane].push_back(shifting);
+                    cout << "Switched: ";
+                    shifting.print();
+                }
             }
-            else if (r < (PAY_PROB + JOIN_PROB)) { // car joins
-                Car newCar;
-                tollLanes[j].push_back(newCar);
-                cout << "Joined: ";
-                newCar.print();
-            }
-            else { // rear car shifts lanes
-                Car shifting = tollLanes[j].back();
-
-                int randLane = j;
-                while (randLane == j)
-                    randLane = rand() % NUM_LANES;
-
-                tollLanes[j].pop_back();
-                tollLanes[randLane]
-
-                cout << "Switched: ";
-                shifting.print();
-            }
-
-
         }
         cout << endl;
+        cout <<
     }
 
 /*
-    for (int i = 1; !tollLane.empty(); i++) {
-        int r = rand() % 100;
-
-        if (r < 55) { // 55% probability that the head car pays and leaves
-            Car leaving = tollLane.front();
-            tollLane.pop_front();
-            cout << "Time: " << i << " Operation: Car paid: ";
-            leaving.print();
-        }
-        else { // 45% probability that another car joins the line
-            Car joining;
-            tollLane.push_back(joining);
-            cout << "Time: " << i << " Operation: Joined lane: ";
-            joining.print();
-        }
-
         cout << "Queue:\n";
         if (tollLane.empty())
             cout << "    Empty\n";
@@ -108,7 +90,6 @@ int main() {
             }
         }
         cout << endl;
-    }
 */
 
     return 0;
