@@ -36,10 +36,11 @@ int main() {
 
         // for-loop to go through each lane
         for (int j = 0; j < NUM_LANES; j++) {
-            cout << "Lane: " << j + 1 << endl;
+            cout << "Lane: " << j + 1;
 
+            // TEST: DELETE !
             // if lane is empty, 50/50 if a new car enters or not
-            if (tollLanes[j].empty()) {
+            if (!tollLanes[j].empty()) {
                 if (rand() % 2 == 0) {
                     Car newCar;
                     tollLanes[j].push_back(newCar);
@@ -47,10 +48,10 @@ int main() {
                     newCar.print();
                 }
                 else
-                    cout << "no car enters";
+                    cout << " no car enters\n";
             }
         }
-
+        cout << endl;
     }
 
 /*
