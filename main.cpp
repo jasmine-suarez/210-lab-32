@@ -76,21 +76,20 @@ int main() {
             }
         }
         cout << endl;
-        cout <<
-    }
 
-/*
-        cout << "Queue:\n";
-        if (tollLane.empty())
-            cout << "    Empty\n";
-        else {
-            for (Car &c : tollLane) {
-                cout << "    ";
-                c.print();
+        for (int lane = 0; lane < NUM_LANES; lane++) {
+            cout << "Lane " << lane + 1 << " Queue:\n";
+            if (tollLanes[lane].empty())
+                cout << "    Empty\n";
+            else {
+                for (Car &c : tollLanes[lane]) {
+                    cout << "        ";
+                    c.print();
+                }
             }
-        }
         cout << endl;
-*/
+        }
+    }
 
     return 0;
 }
