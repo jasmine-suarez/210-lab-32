@@ -63,7 +63,17 @@ int main() {
                 newCar.print();
             }
             else { // rear car shifts lanes
-                Car shifting = tollLanes.back();
+                Car shifting = tollLanes[j].back();
+
+                int randLane = j;
+                while (randLane == j)
+                    randLane = rand() % NUM_LANES;
+
+                tollLanes[j].pop_back();
+                tollLanes[randLane]
+
+                cout << "Switched: ";
+                shifting.print();
             }
 
 
