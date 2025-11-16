@@ -45,7 +45,10 @@ int main() {
                     tollLanes[j].push_back(newCar);
                     cout << "Joined: ";
                     newCar.print();
+                    // cout << endl;
                 }
+                else
+                    cout << "No event" << endl;
             }
             else {
                 int r = rand() % 100; // randomizes int from 1-100
@@ -75,7 +78,6 @@ int main() {
                 }
             }
         }
-        cout << endl;
 
         for (int lane = 0; lane < NUM_LANES; lane++) {
             cout << "Lane " << lane + 1 << " Queue:\n";
@@ -87,8 +89,8 @@ int main() {
                     c.print();
                 }
             }
-        cout << endl;
         }
+        cout << endl;
     }
 
     return 0;
